@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视图窗口，移动端特属的标签。 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+    <meta name="format-detection"content="telephone=no, email=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app"> 
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>社区维护</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            background-color: aliceblue;
+        }
+        main{
+            height: 100%;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox; /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-align-items:center;
+            align-items:center;
+            -webkit-justify-content:center;
+            justify-content:center;
+            flex-direction: column;
+
+        }
+        section{
+            position: relative;
+            width: 98%;
+        }
+        section .tesktop .screen{
+            width: 98%;
+            border: solid 8px rgb(167, 167, 167);
+            height: 200px;
+            background-color: #fff;
+            
+            display: flex;
+            display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox; /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-align-items:center;
+            align-items:center;
+            -webkit-justify-content:center;
+            justify-content:center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 26px;
+        }
+        p{
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+
+        section .tesktop .bottom-sk{
+            width: 60%;
+            background-color: rgb(167, 167, 167);
+            margin:auto;
+        }
+        section .tesktop .bottom-sk .top::after{
+            display: block;
+            height: 0;
+            content: '';
+            visibility: hidden;
+
+            clear: both;
+        }
+        section .tesktop .bottom-sk .top .left,section .tesktop .bottom-sk .top .right{
+            width: 30%;
+            height: 20px;
+            float: left;
+            background-color: aliceblue;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+        section .tesktop .bottom-sk .top .left{
+            border-bottom-right-radius: 20px;
+        }
+        section .tesktop .bottom-sk .top .right{
+            width: 30%;
+            float: right;
+            margin-right: -1px;
+            border-bottom-left-radius: 20px;
+        }
+        section .tesktop .bottom-sk {margin-top: 10px;}
+        section .tesktop .bottom-sk .bottom{
+            height:8px;
+            border-radius: 4px;
+            background-color: rgb(167, 167, 167);
+        }
+
+        ul#pointsBox {
+            list-style: none;
+            padding: 0;
+            width:16%;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            display: flex;
+            display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox; /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-align-items:center;
+            align-items:center;
+            -webkit-justify-content:space-between;
+            justify-content:space-between;
+        }
+        ul#pointsBox li{
+            width:6px; 
+            height:6px; 
+            border-radius:50%;
+            background:#000;
+
+            /* 详细属性 */  
+            animation-name: am1;     /* 动画名称 */  
+            animation-duration: 0.5s;   /* 动画持续时间 */  
+            animation-iteration-count: infinite;   /* 动画次数  infinite:无限播放 */  
+            animation-direction: alternate;   /* 往返运动 */  
+            animation-delay: 0s;     /* 延迟时间 */  
+            /* animation-fill-mode: forwards;   动画结束后的状态(位置)  forwards(结束时的状态) backwards(开始时的状态(默认))   */
+            animation-timing-function: linear;    /* 播放速度 linear:匀速  ease-in-out:先加速后减速 ease-in ease-out */  
+            animation-timing-function: steps(10);   /* 整个动画分3个画面(3帧) */ 
+        }
+        ul#pointsBox li:nth-child(2){
+            animation-delay: 0.1s;
+        }
+        ul#pointsBox li:nth-child(3){
+            animation-delay: 0.2s;
+        }
+        ul#pointsBox li:nth-child(4){
+            animation-delay: 0.3s;
+        }
+        ul#pointsBox li:nth-child(5){
+            animation-delay: 0.4s;
+        }
+        @keyframes am1 {      
+            0% { opacity:1;  /* 多个属性相当于多组动画一起执行 */  
+            }      
+            10%{opacity:0.9; }
+            20%{opacity:0.8; }
+            30%{opacity:0.7; }
+            40%{opacity:0.6; }
+            50%{opacity:0.5; }
+            60%{opacity:0.4; }
+            70%{opacity:0.3; }
+            80%{opacity:0.2; }
+            90%{opacity:0.1; }
+            100% { opacity: 0;}      
+        } 
+        
+        @media screen  and (min-width: 750px) {
+            main{
+                width: 750px;
+            }
+            section{
+                width: 500px;
+            }
+            section .tesktop .screen{
+                width: 98%;
+                border: solid 8px rgb(167, 167, 167);
+                height: 260px;
+            }   
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class='tesktop'>
+                <div class='screen'>
+                    <h1>APP系统升级中，暂停服务</h1>
+                    <p>升级时间：2020年12月22日16:00至24:00</p>
+                        
+                    <ul id='pointsBox'></ul>
+                </div>
+                <div class="bottom-sk">
+                    <div class='top'>
+                        <div class='left'>
+                            &nbsp;
+                        </div>
+                        <div class='right'>
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class='bottom'> &nbsp;</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script type="text/javascript">
+    var pointsBox = document.getElementById('pointsBox');
+    var li = document.createElement('li');
+    for(var i=0;i<5;i++){
+        pointsBox.appendChild(li.cloneNode());
+    }
+</script>
+</html>
